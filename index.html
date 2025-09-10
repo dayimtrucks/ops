@@ -15,24 +15,31 @@
       min-height: 100vh;
     }
 
+    /* Header */
     header {
       background: #002060;
       color: white;
-      padding: 15px;
-      text-align: center;
-      position: relative;
+      padding: 10px 15px;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap; /* stack logo + title on small screens */
     }
 
     header img {
-      position: absolute;
-      left: 20px;
-      top: 10px;
-      height: 50px;
+      height: 45px;
+      max-width: 120px;
+      object-fit: contain;
     }
 
-    h1 {
+    header h1 {
       margin: 0;
-      font-size: 1.8rem;
+      font-size: 1.6rem;
+      text-align: center;
     }
 
     /* Branch tabs */
@@ -40,7 +47,7 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 30px auto 10px;
+      margin: 20px auto 10px;
       gap: 10px;
       max-width: 1000px;
     }
@@ -148,8 +155,10 @@
 </head>
 <body>
   <header>
-    <img src="Image/thumbnail_Outlook-Image.png" alt="Company Logo">
-    <h1>Operation Team Details</h1>
+    <div class="header-container">
+      <img src="Image/thumbnail_Outlook-Image.png" alt="Company Logo">
+      <h1>Operation Team Details</h1>
+    </div>
   </header>
 
   <!-- Branch Tabs -->
