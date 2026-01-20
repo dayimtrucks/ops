@@ -27,7 +27,7 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      flex-wrap: wrap; /* stack logo + title on small screens */
+      flex-wrap: wrap;
     }
 
     header img {
@@ -84,6 +84,40 @@
 
     .tab-content.active {
       display: block;
+    }
+
+    /* Branch location box */
+    .branch-location {
+      border: 1px solid #e5e5e5;
+      background: #f8f9ff;
+      border-radius: 10px;
+      padding: 12px 15px;
+      margin-bottom: 18px;
+    }
+
+    .branch-location h2 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      color: #002060;
+    }
+
+    .branch-location p {
+      margin: 0;
+      color: #444;
+      line-height: 1.5;
+      font-size: 0.95rem;
+    }
+
+    .branch-location a {
+      display: inline-block;
+      margin-top: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      color: #002060;
+    }
+
+    .branch-location a:hover {
+      text-decoration: underline;
     }
 
     /* Contact grid */
@@ -171,31 +205,35 @@
   </div>
 
   <!-- Riyadh -->
-
-
   <div id="riyadh" class="tab-content active">
+
+    <div class="branch-location">
+      <h2>📍 Riyadh Branch Location</h2>
+      <p>ADDRESS_HERE</p>
+      <a href="https://maps.app.goo.gl/PDAo3jvF4X6DCZas7" target="_blank">Open in Google Maps</a>
+    </div>
+
     <div class="contacts-grid">
       <div class="contact">
-        <span class="order">1nd</span>
+        <span class="order">1st</span>
         <h3>Allen</h3>
-        <div class="role">Foreman
-        </div>
+        <div class="role">Foreman</div>
         <div class="contact-info">
           <a href="mailto:allan@dayimtrucks.com">📧 allan@dayimtrucks.com</a>
           <a href="tel:+966570988160">📞 +966 57 098 8160</a>
         </div>
       </div>
-  
+
       <div class="contact">
         <span class="order">2nd</span>
         <h3>Asfandiyar</h3>
         <div class="role">Foreman</div>
         <div class="contact-info">
           <a href="">📧</a>
-          <a href="tel:+966 58 042 1194">📞 +966 58 042 1194</a>
+          <a href="tel:+966580421194">📞 +966 58 042 1194</a>
         </div>
-
       </div>
+
       <div class="contact">
         <span class="order">3rd</span>
         <h3>Mohamed Shafeek</h3>
@@ -205,6 +243,7 @@
           <a href="tel:+966563381602">📞 +966 56 338 1602</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">4th</span>
         <h3>Wael Mounir</h3>
@@ -219,16 +258,24 @@
 
   <!-- Jeddah -->
   <div id="jeddah" class="tab-content">
+
+    <div class="branch-location">
+      <h2>📍 Jeddah Branch Location</h2>
+      <p>ADDRESS_HERE</p>
+      <a href="https://maps.app.goo.gl/Gy88AYQ56gqJv9JA8" target="_blank">Open in Google Maps</a>
+    </div>
+
     <div class="contacts-grid">
       <div class="contact">
         <span class="order">1st</span>
         <h3>Hassan Mokhtar</h3>
         <div class="role">Foreman</div>
         <div class="contact-info">
-          <a href="">📧 </a>
+          <a href="">📧</a>
           <a href="tel:+966560982691">📞 +966 56 098 2691</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">2nd</span>
         <h3>Momin Shabaz</h3>
@@ -238,6 +285,7 @@
           <a href="tel:+966558367307">📞 +966 55 836 7307</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">3rd</span>
         <h3>Saeed AL amoudi</h3>
@@ -247,6 +295,7 @@
           <a href="tel:+966533220700">📞 +966 53 322 0700</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">4th</span>
         <h3>Madeeh Farrag</h3>
@@ -261,6 +310,13 @@
 
   <!-- Dammam -->
   <div id="dammam" class="tab-content">
+
+    <div class="branch-location">
+      <h2>📍 Dammam Branch Location</h2>
+      <p>ADDRESS_HERE</p>
+      <a href="https://maps.app.goo.gl/Jb9Ua4EfWtqznj88A" target="_blank">Open in Google Maps</a>
+    </div>
+
     <div class="contacts-grid">
       <div class="contact">
         <span class="order">1st</span>
@@ -271,6 +327,7 @@
           <a href="tel:+966592881077">📞 +966 59 288 1077</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">2nd</span>
         <h3>Mohamed Shafeek</h3>
@@ -280,6 +337,7 @@
           <a href="tel:+966563381602">📞 +966 56 338 1602</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">3rd</span>
         <h3>Wael Mounir</h3>
@@ -294,6 +352,13 @@
 
   <!-- Jizan -->
   <div id="jizan" class="tab-content">
+
+    <div class="branch-location">
+      <h2>📍 Jizan Branch Location</h2>
+      <p>ADDRESS_HERE</p>
+      <a href="https://maps.app.goo.gl/JMXwdKVA11ShXsu36" target="_blank">Open in Google Maps</a>
+    </div>
+
     <div class="contacts-grid">
       <div class="contact">
         <span class="order">1st</span>
@@ -304,6 +369,7 @@
           <a href="tel:+966560513781">📞 +966 56 051 3781</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">2nd</span>
         <h3>Ishaq Aziz</h3>
@@ -313,6 +379,7 @@
           <a href="tel:+966583735041">📞 +966 58 373 5041</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">3rd</span>
         <h3>Madeeh Farrag</h3>
@@ -322,6 +389,7 @@
           <a href="tel:+966540797611">📞 +966 54 079 7611</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">4th</span>
         <h3>Wael Mounir</h3>
@@ -336,6 +404,13 @@
 
   <!-- Hail -->
   <div id="hail" class="tab-content">
+
+    <div class="branch-location">
+      <h2>📍 Hail Branch Location</h2>
+      <p>ADDRESS_HERE</p>
+      <a href="MAP_LINK_HERE" target="_blank">Open in Google Maps</a>
+    </div>
+
     <div class="contacts-grid">
       <div class="contact">
         <span class="order">1st</span>
@@ -346,6 +421,7 @@
           <a href="tel:+966593959828">📞 +966 59 395 9828</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">2nd</span>
         <h3>Mohamed Shafeek</h3>
@@ -355,6 +431,7 @@
           <a href="tel:+966563381602">📞 +966 56 338 1602</a>
         </div>
       </div>
+
       <div class="contact">
         <span class="order">3rd</span>
         <h3>Wael Mounir</h3>
@@ -378,11 +455,9 @@
 
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
-        // Reset
         tabs.forEach(t => t.classList.remove("active"));
         contents.forEach(c => c.classList.remove("active"));
 
-        // Activate current
         tab.classList.add("active");
         document.getElementById(tab.dataset.target).classList.add("active");
       });
@@ -390,4 +465,3 @@
   </script>
 </body>
 </html>
-
