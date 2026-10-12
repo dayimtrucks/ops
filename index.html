@@ -1,10 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Operation Team Contacts</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -50,6 +56,7 @@
       margin: 20px auto 10px;
       gap: 10px;
       max-width: 1000px;
+      padding: 0 12px;
     }
 
     .tab {
@@ -61,6 +68,8 @@
       border-radius: 6px;
       cursor: pointer;
       transition: background 0.3s;
+      border: none;
+      font-family: inherit;
     }
 
     .tab:hover {
@@ -74,6 +83,7 @@
     /* Contacts container */
     .tab-content {
       display: none;
+      width: calc(100% - 24px);
       max-width: 1000px;
       margin: 0 auto 40px;
       padding: 20px;
@@ -123,7 +133,10 @@
     /* Contact grid */
     .contacts-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(260px, 100%), 1fr)
+      );
       gap: 20px;
     }
 
@@ -134,6 +147,7 @@
       background: white;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
       transition: transform 0.2s;
+      min-width: 0;
     }
 
     .contact:hover {
@@ -157,6 +171,7 @@
       font-size: 0.9rem;
       color: #666;
       margin-bottom: 10px;
+      margin-top: 5px;
     }
 
     .contact-info {
@@ -170,6 +185,8 @@
       text-decoration: none;
       color: #333;
       font-size: 0.95rem;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     .contact-info a:hover {
@@ -185,23 +202,82 @@
       font-size: 1.1rem;
       font-style: italic;
     }
+
+    /* Mobile compatibility */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.3rem;
+      }
+
+      .tabs {
+        gap: 8px;
+        margin-top: 15px;
+      }
+
+      .tab {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+      }
+
+      .tab-content {
+        padding: 15px;
+        margin-bottom: 25px;
+      }
+
+      .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+
+      .contact {
+        padding: 15px;
+      }
+
+      .quote {
+        padding: 22px 12px;
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <header>
     <div class="header-container">
-      <img src="Image/thumbnail_Outlook-Image.png" alt="Company Logo">
+      <img
+        src="Image/thumbnail_Outlook-Image.png"
+        alt="Company Logo"
+      >
       <h1>Operation Team Details</h1>
     </div>
   </header>
 
   <!-- Branch Tabs -->
-  <div class="tabs">
-    <div class="tab active" data-target="riyadh">Riyadh</div>
-    <div class="tab" data-target="jeddah">Jeddah</div>
-    <div class="tab" data-target="dammam">Dammam</div>
-    <div class="tab" data-target="jizan">Jizan</div>
-    <div class="tab" data-target="hail">Hail</div>
+  <div class="tabs" role="tablist" aria-label="Branches">
+    <button class="tab active" data-target="riyadh">
+      Riyadh
+    </button>
+
+    <button class="tab" data-target="jeddah">
+      Jeddah
+    </button>
+
+    <button class="tab" data-target="dammam">
+      Dammam
+    </button>
+
+    <button class="tab" data-target="jizan">
+      Jizan
+    </button>
+
+    <button class="tab" data-target="hail">
+      Hail
+    </button>
+
+    <button class="tab" data-target="madinah">
+      Madinah / Red Sea
+    </button>
   </div>
 
   <!-- Riyadh -->
@@ -210,61 +286,70 @@
     <div class="branch-location">
       <h2>📍 Riyadh Branch Location</h2>
       <p>ADDRESS_HERE</p>
-      <a href="https://maps.app.goo.gl/PDAo3jvF4X6DCZas7" target="_blank">Open in Google Maps</a>
+      <a
+        href="https://maps.app.goo.gl/PDAo3jvF4X6DCZas7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open in Google Maps
+      </a>
     </div>
 
     <div class="contacts-grid">
+
       <div class="contact">
         <span class="order">1st</span>
-        <h3>Allen</h3>
+        <h3>Asfandiyar</h3>
         <div class="role">Foreman</div>
         <div class="contact-info">
-          <a href="mailto:allan@dayimtrucks.com">📧 allan@dayimtrucks.com</a>
-          <a href="tel:+966570988160">📞 +966 57 098 8160</a>
+          <a href="tel:+966580421194">
+            📞 +966 58 042 1194
+          </a>
         </div>
       </div>
 
       <div class="contact">
         <span class="order">2nd</span>
-        <h3>Asfandiyar</h3>
-        <div class="role">Foreman</div>
-        <div class="contact-info">
-          <a href="">📧</a>
-          <a href="tel:+966580421194">📞 +966 58 042 1194</a>
-        </div>
-      </div>
-
-
-       <div class="contact">
-        <span class="order">3nd</span>
         <h3>Mohamed Gad</h3>
         <div class="role">Service Controller</div>
         <div class="contact-info">
-          <a href="mailto:mohammed.gad@dayimtrucks.com">📧 mohammed.gad@dayimtrucks.com</a>
-          <a href="tel:+966596451951">📞 +966 59 645 1951</a>
+          <a href="mailto:mohammed.gad@dayimtrucks.com">
+            📧 mohammed.gad@dayimtrucks.com
+          </a>
+          <a href="tel:+966596451951">
+            📞 +966 59 645 1951
+          </a>
         </div>
       </div>
-      
 
       <div class="contact">
-        <span class="order">4rd</span>
+        <span class="order">3rd</span>
         <h3>Mohamed Shafeek</h3>
         <div class="role">Branch Manager</div>
         <div class="contact-info">
-          <a href="mailto:mohamed.shafeek@dayimtrucks.com">📧 mohamed.shafeek@dayimtrucks.com</a>
-          <a href="tel:+966563381602">📞 +966 56 338 1602</a>
+          <a href="mailto:mohamed.shafeek@dayimtrucks.com">
+            📧 mohamed.shafeek@dayimtrucks.com
+          </a>
+          <a href="tel:+966563381602">
+            📞 +966 56 338 1602
+          </a>
         </div>
       </div>
 
       <div class="contact">
-        <span class="order">5th</span>
+        <span class="order">4th</span>
         <h3>Wael Mounir</h3>
         <div class="role">National Fleet Manager</div>
         <div class="contact-info">
-          <a href="mailto:wael.mounir@dayimtrucks.com">📧 wael.mounir@dayimtrucks.com</a>
-          <a href="tel:+966599066647">📞 +966 59 906 6647</a>
+          <a href="mailto:wael.mounir@dayimtrucks.com">
+            📧 wael.mounir@dayimtrucks.com
+          </a>
+          <a href="tel:+966599066647">
+            📞 +966 59 906 6647
+          </a>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -274,17 +359,25 @@
     <div class="branch-location">
       <h2>📍 Jeddah Branch Location</h2>
       <p>ADDRESS_HERE</p>
-      <a href="https://maps.app.goo.gl/Gy88AYQ56gqJv9JA8" target="_blank">Open in Google Maps</a>
+      <a
+        href="https://maps.app.goo.gl/Gy88AYQ56gqJv9JA8"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open in Google Maps
+      </a>
     </div>
 
     <div class="contacts-grid">
+
       <div class="contact">
         <span class="order">1st</span>
         <h3>Hassan Mokhtar</h3>
         <div class="role">Foreman</div>
         <div class="contact-info">
-          <a href="">📧</a>
-          <a href="tel:+966560982691">📞 +966 56 098 2691</a>
+          <a href="tel:+966560982691">
+            📞 +966 56 098 2691
+          </a>
         </div>
       </div>
 
@@ -293,8 +386,12 @@
         <h3>Momin Shabaz</h3>
         <div class="role">Service Controller</div>
         <div class="contact-info">
-          <a href="mailto:sc.jeddah@dayimtrucks.com">📧 sc.jeddah@dayimtrucks.com</a>
-          <a href="tel:+966558367307">📞 +966 55 836 7307</a>
+          <a href="mailto:sc.jeddah@dayimtrucks.com">
+            📧 sc.jeddah@dayimtrucks.com
+          </a>
+          <a href="tel:+966558367307">
+            📞 +966 55 836 7307
+          </a>
         </div>
       </div>
 
@@ -303,8 +400,12 @@
         <h3>Saeed AL amoudi</h3>
         <div class="role">Fleet Coordinator</div>
         <div class="contact-info">
-          <a href="mailto:fleet.coordinator.jeddah@dayimtrucks.com">📧 fleet.coordinator.jeddah@dayimtrucks.com</a>
-          <a href="tel:+966533220700">📞 +966 53 322 0700</a>
+          <a href="mailto:fleet.coordinator.jeddah@dayimtrucks.com">
+            📧 fleet.coordinator.jeddah@dayimtrucks.com
+          </a>
+          <a href="tel:+966533220700">
+            📞 +966 53 322 0700
+          </a>
         </div>
       </div>
 
@@ -313,10 +414,15 @@
         <h3>Madeeh Farrag</h3>
         <div class="role">Branch Manager</div>
         <div class="contact-info">
-          <a href="mailto:madeeh.farrag@dayimtrucks.com">📧 madeeh.farrag@dayimtrucks.com</a>
-          <a href="tel:+966540797611">📞 +966 54 079 7611</a>
+          <a href="mailto:madeeh.farrag@dayimtrucks.com">
+            📧 madeeh.farrag@dayimtrucks.com
+          </a>
+          <a href="tel:+966540797611">
+            📞 +966 54 079 7611
+          </a>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -326,39 +432,73 @@
     <div class="branch-location">
       <h2>📍 Dammam Branch Location</h2>
       <p>ADDRESS_HERE</p>
-      <a href="https://maps.app.goo.gl/Jb9Ua4EfWtqznj88A" target="_blank">Open in Google Maps</a>
+      <a
+        href="https://maps.app.goo.gl/Jb9Ua4EfWtqznj88A"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open in Google Maps
+      </a>
     </div>
 
     <div class="contacts-grid">
+
       <div class="contact">
         <span class="order">1st</span>
-        <h3>John Pickson</h3>
-        <div class="role">Service Controller</div>
+        <h3>Allen</h3>
+        <div class="role">Foreman</div>
         <div class="contact-info">
-          <a href="mailto:john.pickson@dayimtrucks.com">📧 john.pickson@dayimtrucks.com</a>
-          <a href="tel:+966592881077">📞 +966 59 288 1077</a>
+          <a href="mailto:allan@dayimtrucks.com">
+            📧 allan@dayimtrucks.com
+          </a>
+          <a href="tel:+966570988160">
+            📞 +966 57 098 8160
+          </a>
         </div>
       </div>
 
       <div class="contact">
         <span class="order">2nd</span>
-        <h3>Mohamed Shafeek</h3>
-        <div class="role">Branch Manager</div>
+        <h3>John Pickson</h3>
+        <div class="role">Service Controller</div>
         <div class="contact-info">
-          <a href="mailto:mohamed.shafeek@dayimtrucks.com">📧 mohamed.shafeek@dayimtrucks.com</a>
-          <a href="tel:+966563381602">📞 +966 56 338 1602</a>
+          <a href="mailto:john.pickson@dayimtrucks.com">
+            📧 john.pickson@dayimtrucks.com
+          </a>
+          <a href="tel:+966592881077">
+            📞 +966 59 288 1077
+          </a>
         </div>
       </div>
 
       <div class="contact">
         <span class="order">3rd</span>
-        <h3>Wael Mounir</h3>
-        <div class="role">National Fleet Manager</div>
+        <h3>Mohamed Mahmoud</h3>
+        <div class="role">Branch Manager</div>
         <div class="contact-info">
-          <a href="mailto:wael.mounir@dayimtrucks.com">📧 wael.mounir@dayimtrucks.com</a>
-          <a href="tel:+966599066647">📞 +966 59 906 6647</a>
+          <a href="mailto:m.mahmoud@dayimtrucks.com">
+            📧 m.mahmoud@dayimtrucks.com
+          </a>
+          <a href="tel:+966539644613">
+            📞 +966 53 964 4613
+          </a>
         </div>
       </div>
+
+      <div class="contact">
+        <span class="order">4th</span>
+        <h3>Mohamed Shafeek</h3>
+        <div class="role">Branch Manager</div>
+        <div class="contact-info">
+          <a href="mailto:mohamed.shafeek@dayimtrucks.com">
+            📧 mohamed.shafeek@dayimtrucks.com
+          </a>
+          <a href="tel:+966563381602">
+            📞 +966 56 338 1602
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 
@@ -368,17 +508,28 @@
     <div class="branch-location">
       <h2>📍 Jizan Branch Location</h2>
       <p>ADDRESS_HERE</p>
-      <a href="https://maps.app.goo.gl/JMXwdKVA11ShXsu36" target="_blank">Open in Google Maps</a>
+      <a
+        href="https://maps.app.goo.gl/JMXwdKVA11ShXsu36"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open in Google Maps
+      </a>
     </div>
 
     <div class="contacts-grid">
+
       <div class="contact">
         <span class="order">1st</span>
         <h3>Ali Raza</h3>
         <div class="role">Fleet Coordinator</div>
         <div class="contact-info">
-          <a href="mailto:fleet.coordinator.jizan@dayimtrucks.com">📧 fleet.coordinator.jizan@dayimtrucks.com</a>
-          <a href="tel:+966560513781">📞 +966 56 051 3781</a>
+          <a href="mailto:fleet.coordinator.jizan@dayimtrucks.com">
+            📧 fleet.coordinator.jizan@dayimtrucks.com
+          </a>
+          <a href="tel:+966560513781">
+            📞 +966 56 051 3781
+          </a>
         </div>
       </div>
 
@@ -387,8 +538,12 @@
         <h3>Ishaq Aziz</h3>
         <div class="role">Assistant Branch Manager</div>
         <div class="contact-info">
-          <a href="mailto:ishaq.aziz@dayimtrucks.com">📧 ishaq.aziz@dayimtrucks.com</a>
-          <a href="tel:+966583735041">📞 +966 58 373 5041</a>
+          <a href="mailto:ishaq.aziz@dayimtrucks.com">
+            📧 ishaq.aziz@dayimtrucks.com
+          </a>
+          <a href="tel:+966583735041">
+            📞 +966 58 373 5041
+          </a>
         </div>
       </div>
 
@@ -397,8 +552,12 @@
         <h3>Madeeh Farrag</h3>
         <div class="role">Branch Manager</div>
         <div class="contact-info">
-          <a href="mailto:madeeh.farrag@dayimtrucks.com">📧 madeeh.farrag@dayimtrucks.com</a>
-          <a href="tel:+966540797611">📞 +966 54 079 7611</a>
+          <a href="mailto:madeeh.farrag@dayimtrucks.com">
+            📧 madeeh.farrag@dayimtrucks.com
+          </a>
+          <a href="tel:+966540797611">
+            📞 +966 54 079 7611
+          </a>
         </div>
       </div>
 
@@ -407,10 +566,15 @@
         <h3>Wael Mounir</h3>
         <div class="role">National Fleet Manager</div>
         <div class="contact-info">
-          <a href="mailto:wael.mounir@dayimtrucks.com">📧 wael.mounir@dayimtrucks.com</a>
-          <a href="tel:+966599066647">📞 +966 59 906 6647</a>
+          <a href="mailto:wael.mounir@dayimtrucks.com">
+            📧 wael.mounir@dayimtrucks.com
+          </a>
+          <a href="tel:+966599066647">
+            📞 +966 59 906 6647
+          </a>
         </div>
       </div>
+
     </div>
   </div>
 
@@ -420,17 +584,28 @@
     <div class="branch-location">
       <h2>📍 Hail Branch Location</h2>
       <p>ADDRESS_HERE</p>
-      <a href="https://maps.app.goo.gl/DMv3pdixS2rPcMEH6" target="_blank">Open in Google Maps</a>
+      <a
+        href="https://maps.app.goo.gl/DMv3pdixS2rPcMEH6"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open in Google Maps
+      </a>
     </div>
 
     <div class="contacts-grid">
+
       <div class="contact">
         <span class="order">1st</span>
         <h3>Saleem Khan</h3>
         <div class="role">Fleet Coordinator</div>
         <div class="contact-info">
-          <a href="mailto:tc.north@dayimtrucks.com">📧 tc.north@dayimtrucks.com</a>
-          <a href="tel:+966593959828">📞 +966 59 395 9828</a>
+          <a href="mailto:tc.north@dayimtrucks.com">
+            📧 tc.north@dayimtrucks.com
+          </a>
+          <a href="tel:+966593959828">
+            📞 +966 59 395 9828
+          </a>
         </div>
       </div>
 
@@ -439,8 +614,12 @@
         <h3>Mohamed Shafeek</h3>
         <div class="role">Branch Manager</div>
         <div class="contact-info">
-          <a href="mailto:mohamed.shafeek@dayimtrucks.com">📧 mohamed.shafeek@dayimtrucks.com</a>
-          <a href="tel:+966563381602">📞 +966 56 338 1602</a>
+          <a href="mailto:mohamed.shafeek@dayimtrucks.com">
+            📧 mohamed.shafeek@dayimtrucks.com
+          </a>
+          <a href="tel:+966563381602">
+            📞 +966 56 338 1602
+          </a>
         </div>
       </div>
 
@@ -449,32 +628,131 @@
         <h3>Wael Mounir</h3>
         <div class="role">National Fleet Manager</div>
         <div class="contact-info">
-          <a href="mailto:wael.mounir@dayimtrucks.com">📧 wael.mounir@dayimtrucks.com</a>
-          <a href="tel:+966599066647">📞 +966 59 906 6647</a>
+          <a href="mailto:wael.mounir@dayimtrucks.com">
+            📧 wael.mounir@dayimtrucks.com
+          </a>
+          <a href="tel:+966599066647">
+            📞 +966 59 906 6647
+          </a>
         </div>
       </div>
+
     </div>
   </div>
 
+  <!-- Madinah / Red Sea -->
+  <div id="madinah" class="tab-content">
+
+    <div class="branch-location">
+      <h2>📍 Madinah / Red Sea Branch Location</h2>
+      <p>ADDRESS_HERE</p>
+
+      <!-- Verify this link: it matches the Hail link
+           in the supplied source file. -->
+      <a
+        href="https://maps.app.goo.gl/HudQGYssLm3SnSp46"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open in Google Maps
+      </a>
+    </div>
+
+    <div class="contacts-grid">
+
+      <div class="contact">
+        <span class="order">1st</span>
+        <h3>Mohamed Sabir</h3>
+        <div class="role">Foreman</div>
+        <div class="contact-info">
+          <a href="mailto:sc.jd_md@dayimtrucks.com">
+            📧 sc.jd_md@dayimtrucks.com
+          </a>
+          <a href="tel:+966594167343">
+            📞 +966 59 416 7343
+          </a>
+        </div>
+      </div>
+
+      <div class="contact">
+        <span class="order">2nd</span>
+        <h3>Siva</h3>
+        <div class="role">Service Controller</div>
+        <div class="contact-info">
+          <a href="mailto:siva@dayimtrucks.com">
+            📧 siva@dayimtrucks.com
+          </a>
+          <a href="tel:+966555241300">
+            📞 +966 55 524 1300
+          </a>
+        </div>
+      </div>
+
+      <div class="contact">
+        <span class="order">3rd</span>
+        <h3>Madeeh Farrag</h3>
+        <div class="role">Branch Manager</div>
+        <div class="contact-info">
+          <a href="mailto:madeeh.farrag@dayimtrucks.com">
+            📧 madeeh.farrag@dayimtrucks.com
+          </a>
+          <a href="tel:+966540797611">
+            📞 +966 54 079 7611
+          </a>
+        </div>
+      </div>
+
+      <div class="contact">
+        <span class="order">4th</span>
+        <h3>Wael Mounir</h3>
+        <div class="role">National Fleet Manager</div>
+        <div class="contact-info">
+          <a href="mailto:wael.mounir@dayimtrucks.com">
+            📧 wael.mounir@dayimtrucks.com
+          </a>
+          <a href="tel:+966599066647">
+            📞 +966 59 906 6647
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
   <div class="quote">
-    "We Always Happy to Help You."
+    "We Are Always Happy to Help You."
   </div>
 
   <script>
-    // Tab functionality
+    // Branch tab functionality
     const tabs = document.querySelectorAll(".tab");
     const contents = document.querySelectorAll(".tab-content");
 
     tabs.forEach(tab => {
       tab.addEventListener("click", () => {
-        tabs.forEach(t => t.classList.remove("active"));
-        contents.forEach(c => c.classList.remove("active"));
+
+        tabs.forEach(t => {
+          t.classList.remove("active");
+        });
+
+        contents.forEach(c => {
+          c.classList.remove("active");
+        });
 
         tab.classList.add("active");
-        document.getElementById(tab.dataset.target).classList.add("active");
+
+        const target = document.getElementById(
+          tab.dataset.target
+        );
+
+        if (target) {
+          target.classList.add("active");
+        }
+
       });
     });
   </script>
+
 </body>
 </html>
-
